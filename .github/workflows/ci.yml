@@ -1,0 +1,14 @@
+name: CI WORKFLOW 
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Checkout Code 
+        uses: actions/checkout@v4
+
+      - name: Setup Docker
+        uses: docker/setup-buildx-action@v4
