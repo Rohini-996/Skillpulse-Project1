@@ -171,13 +171,13 @@ jobs:
 
       - name: Update Backend Deployment Image
         run: |
-          sed -i 's|image: .*skillpulse-backend.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/skillpulse-backend:${{ github.sha }}|g' k8s/20-backend.yaml 
+          sed -i 's|image: .*skillpulse-backend.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/skillpulse-backend:${{ github.sha }}|g' k8s/backend/
 
       # ---------------- UPDATE FRONTEND IMAGE ---------------- #
 
       - name: Update Frontend Deployment Image
         run: |
-          sed -i 's|image: .*skillpulse-frontend.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/skillpulse-frontend:${{ github.sha }}|g' k8s/30-frontend.yaml
+          sed -i 's|image: .*skillpulse-frontend.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/skillpulse-frontend:${{ github.sha }}|g' k8s/frontend/
 
       # ---------------- COMMIT ---------------- #
 
