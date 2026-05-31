@@ -57,6 +57,9 @@ spec:
             - name: DB_PASSWORD
               value: {{ .Values.env.DB_PASSWORD }}
 
+            - name: DOCKERHUB_USERNAME
+              value: {{ .Values.env.DOCKERHUB_USERNAME }}
+
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
